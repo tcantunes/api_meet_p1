@@ -10,10 +10,17 @@ class UserRepository {
         UserRepository.instance = this;
     }
 
+    async getAllUsers() {
+        try {
+            return await User.findAll();
+        } catch (error) {
+            throw new Error('Erro ao buscar usuários');
+        }
+    }
+
     async createUser(userData) {
         try {
-            const user = new User(userData);
-            return await user.save();
+            return await User.create(userData);
         } catch (error) {
             console.error('Erro ao criar usuário no repositório:', error);
             throw error;
@@ -22,7 +29,7 @@ class UserRepository {
 
     async findUserByEmail(email) {
         try {
-            return await User.findOne({ email });
+            return await User.findOne({ where: { email } });
         } catch (error) {
             throw new Error('Erro ao encontrar usuário por email');
         }
@@ -30,9 +37,9 @@ class UserRepository {
 
     async findUserById(id) {
         try {
-            return await User.findById(id);
+            return await User.findByPk(id);
         } catch (error) {
-            throw new Error('Erroao encontrar usuário por id');
+            throw new Error('Erro ao encontrar usuário por id');
         }
     }
 }

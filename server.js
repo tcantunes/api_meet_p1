@@ -6,10 +6,13 @@ const { connectPostgresDB } = require('./config/dbPostgres');
 const authRoutes = require('./routes/auth');
 const roomRoutes = require('./routes/room');
 const { authenticateToken } = require('./middleware/authMiddleware');
-const { socketConnection } = require('./config/socket'); 
+const { socketConnection } = require('./config/socket');
+const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);  
+
+app.use(cors());
 
 app.use(express.json());
 

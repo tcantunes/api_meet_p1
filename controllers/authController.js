@@ -12,10 +12,19 @@ class AuthController {
         AuthController.instance = this;
     }
 
+    async getAllUsers(req, res) {
+        try {
+            const users = await UserRepository.getAllUsers();
+            res.status(200).json(users);
+        } catch (error) {
+            res.status(500).send('Erro ao listar usuários');
+        }
+    }
+
     async register(req, res) {
         const { name, email, password } = req.body;
         try {
-            const saltRounds = 10; 
+            const saltRounds = 10;
             const hashedPassword = await bcrypt.hash(password, saltRounds);
             const userData = { name, email, password: hashedPassword };
             await UserRepository.createUser(userData);
@@ -25,7 +34,6 @@ class AuthController {
             res.status(400).send('Erro ao registrar');
         }
     }
-    
 
     async login(req, res) {
         const { email, password } = req.body;
@@ -40,7 +48,7 @@ class AuthController {
             res.json({ token });
         } catch (error) {
             console.error('Erro ao logar:', error);
-            res.status(400).send('Error');
+            res.status(400).send('Erro ao logar');
         }
     }
 }
