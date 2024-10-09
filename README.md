@@ -1,4 +1,6 @@
 # Testando funcionamento com o postman
 
-https://github.com/user-attachments/assets/2ace31ac-eed4-44a6-bc8f-5966a17acc34
+https://github.com/user-attachments/assets/a17e581a-f15e-4168-b3b6-44d80fc14a2b
+
+
 
