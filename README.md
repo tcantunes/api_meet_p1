@@ -27,6 +27,8 @@ https://github.com/user-attachments/assets/a17e581a-f15e-4168-b3b6-44d80fc14a2b
 
 http://localhost:5000/api-docs/
 
+![image](https://github.com/user-attachments/assets/ba6db0f2-3399-4378-8e80-5711420bba98)
+
 # Executar projeto
 
 - git clone
