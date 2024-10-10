@@ -32,7 +32,7 @@ const router = express.Router();
  * /api/auth/register:
  *   post:
  *     summary: Registra um novo usuário
- *     tags: [Auth]
+ *     tags: [User]
  *     requestBody:
  *       required: true
  *       content:
@@ -79,7 +79,7 @@ router.post('/login', (req, res) => AuthController.login(req, res));
  * /api/auth/users:
  *   get:
  *     summary: Lista todos os usuários
- *     tags: [Auth]
+ *     tags: [User]
  *     responses:
  *       200:
  *         description: Lista de usuários
