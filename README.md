@@ -23,6 +23,10 @@ Esta aplicação é uma API para gerenciamento de salas de reunião virtuais, ut
 
 https://github.com/user-attachments/assets/a17e581a-f15e-4168-b3b6-44d80fc14a2b
 
+# Conexão Socket.IO
+
+https://github.com/user-attachments/assets/c9d9a2bf-5d80-48b7-ba61-ad556f07ac57
+
 # Documentação no Swagger
 
 http://localhost:5000/api-docs/
